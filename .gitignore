@@ -1,15 +1,31 @@
-# Godot 4 .gitignore
-
-# Godot-specific ignores
+# Godot 4
 .godot/
 *.translation
 
 # Exported projects
 /export/
 
+# Import cache
+*.import
+
 # OS-specific
 .DS_Store
 Thumbs.db
+desktop.ini
 
-# Editor backups
+# Editor backups & temp files
 *.bak
+*.tmp
+*~
+
+# VS Code
+.vscode/
+
+# JetBrains (Rider)
+.idea/
+
+# Windows image file caches
+ehthumbs.db
+
+# Logs
+*.log
