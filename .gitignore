@@ -8,6 +8,9 @@
 # Import cache
 *.import
 
+# Godot UID files (auto-generated)
+*.uid
+
 # OS-specific
 .DS_Store
 Thumbs.db
