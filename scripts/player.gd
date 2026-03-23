@@ -34,6 +34,7 @@ var is_wall_sliding: bool = false
 var facing_direction: float = 1.0
 var health: int = MAX_HEALTH
 var invincibility_timer: float = 0.0
+var spawn_position: Vector3
 
 signal health_changed(new_health: int)
 signal died()
@@ -41,6 +42,7 @@ signal died()
 
 func _ready() -> void:
 	add_to_group("player")
+	spawn_position = global_position
 
 
 func take_damage(amount: int) -> void:
@@ -62,7 +64,7 @@ func _check_dash_hits() -> void:
 
 func _die() -> void:
 	died.emit()
-	position = Vector3(0, 2, 0)
+	global_position = spawn_position
 	velocity = Vector3.ZERO
 	health = MAX_HEALTH
 	health_changed.emit(health)

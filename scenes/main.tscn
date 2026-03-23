@@ -70,20 +70,18 @@ mesh = SubResource("5")
 shape = SubResource("6")
 
 [node name="LeftPillar" type="StaticBody3D" parent="." unique_id=1009367664]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 4, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 4, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="LeftPillar" unique_id=1772004932]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 5, 0)
 mesh = SubResource("7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LeftPillar" unique_id=1553446095]
 shape = SubResource("8")
 
 [node name="RightPillar" type="StaticBody3D" parent="." unique_id=21145064]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 4, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RightPillar" unique_id=1363815851]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 5, 0)
 mesh = SubResource("7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RightPillar" unique_id=1309456321]
