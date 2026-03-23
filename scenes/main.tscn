@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3]
+[gd_scene format=3 uid="uid://cci03hutqpx20"]
 
 [ext_resource type="PackedScene" path="res://scenes/player.tscn" id="1"]
 [ext_resource type="PackedScene" path="res://scenes/enemy.tscn" id="2"]
@@ -27,80 +27,82 @@ size = Vector3(8, 0.5, 1)
 [sub_resource type="BoxShape3D" id="10"]
 size = Vector3(8, 0.5, 1)
 
-[node name="Main" type="Node3D"]
+[node name="Main" type="Node3D" unique_id=682475215]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-rotation = Vector3(-0.9599, 0.5236, 0)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1887898834]
+transform = Transform3D(0.8660248, -0.40956798, 0.28680158, 0, 0.5736019, 0.81913424, -0.5000011, -0.7093906, 0.49675345, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Floor" type="StaticBody3D" parent="."]
-position = Vector3(0, -0.25, 0)
+[node name="Floor" type="StaticBody3D" parent="." unique_id=1527044902]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=109072752]
 mesh = SubResource("3")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=205916667]
 shape = SubResource("4")
 
-[node name="Platform1" type="StaticBody3D" parent="."]
-position = Vector3(-8, 2.0, 0)
+[node name="Platform1" type="StaticBody3D" parent="." unique_id=1221064964]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 2, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Platform1"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Platform1" unique_id=629177260]
 mesh = SubResource("5")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform1"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform1" unique_id=567633848]
 shape = SubResource("6")
 
-[node name="Platform2" type="StaticBody3D" parent="."]
-position = Vector3(0, 4.0, 0)
+[node name="Platform2" type="StaticBody3D" parent="." unique_id=1701764983]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Platform2"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Platform2" unique_id=1317136832]
 mesh = SubResource("5")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform2" unique_id=572079741]
 shape = SubResource("6")
 
-[node name="Platform3" type="StaticBody3D" parent="."]
-position = Vector3(8, 2.0, 0)
+[node name="Platform3" type="StaticBody3D" parent="." unique_id=2046084064]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Platform3"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Platform3" unique_id=458678728]
 mesh = SubResource("5")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform3"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform3" unique_id=2004100113]
 shape = SubResource("6")
 
-[node name="LeftPillar" type="StaticBody3D" parent="."]
-position = Vector3(-2, 4, 0)
+[node name="LeftPillar" type="StaticBody3D" parent="." unique_id=1009367664]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 4, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="LeftPillar"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="LeftPillar" unique_id=1772004932]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 5, 0)
 mesh = SubResource("7")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="LeftPillar"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LeftPillar" unique_id=1553446095]
 shape = SubResource("8")
 
-[node name="RightPillar" type="StaticBody3D" parent="."]
-position = Vector3(2, 4, 0)
+[node name="RightPillar" type="StaticBody3D" parent="." unique_id=21145064]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RightPillar"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RightPillar" unique_id=1363815851]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 5, 0)
 mesh = SubResource("7")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RightPillar"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RightPillar" unique_id=1309456321]
 shape = SubResource("8")
 
-[node name="HighPlatform" type="StaticBody3D" parent="."]
-position = Vector3(0, 8.5, 0)
+[node name="HighPlatform" type="StaticBody3D" parent="." unique_id=1107279921]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.5, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="HighPlatform"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="HighPlatform" unique_id=988429707]
 mesh = SubResource("9")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="HighPlatform"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HighPlatform" unique_id=2084331364]
 shape = SubResource("10")
 
-[node name="Player" parent="." instance=ExtResource("1")]
-position = Vector3(-10, 2, 0)
+[node name="Player" parent="." unique_id=318817804 instance=ExtResource("1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 2, 0)
 
-[node name="Enemy1" parent="." instance=ExtResource("2")]
-position = Vector3(-8, 3.5, 0)
+[node name="Enemy1" parent="." unique_id=2108251072 instance=ExtResource("2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 3.5, 0)
 
-[node name="Enemy2" parent="." instance=ExtResource("2")]
-position = Vector3(8, 3.5, 0)
+[node name="Enemy2" parent="." unique_id=583407876 instance=ExtResource("2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 3.5, 0)
