@@ -1,18 +1,31 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene load_steps=10 format=3]
 
 [ext_resource type="PackedScene" path="res://scenes/player.tscn" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/enemy.tscn" id="2"]
 
-[sub_resource type="BoxMesh" id="2"]
-size = Vector3(20, 0.5, 1)
+[sub_resource type="BoxMesh" id="3"]
+size = Vector3(30, 0.5, 1)
 
-[sub_resource type="BoxShape3D" id="3"]
-size = Vector3(20, 0.5, 1)
+[sub_resource type="BoxShape3D" id="4"]
+size = Vector3(30, 0.5, 1)
 
-[sub_resource type="BoxMesh" id="4"]
+[sub_resource type="BoxMesh" id="5"]
 size = Vector3(4, 0.5, 1)
 
-[sub_resource type="BoxShape3D" id="5"]
+[sub_resource type="BoxShape3D" id="6"]
 size = Vector3(4, 0.5, 1)
+
+[sub_resource type="BoxMesh" id="7"]
+size = Vector3(1, 8, 1)
+
+[sub_resource type="BoxShape3D" id="8"]
+size = Vector3(1, 8, 1)
+
+[sub_resource type="BoxMesh" id="9"]
+size = Vector3(8, 0.5, 1)
+
+[sub_resource type="BoxShape3D" id="10"]
+size = Vector3(8, 0.5, 1)
 
 [node name="Main" type="Node3D"]
 
@@ -24,37 +37,70 @@ shadow_enabled = true
 position = Vector3(0, -0.25, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
-mesh = SubResource("2")
+mesh = SubResource("3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
-shape = SubResource("3")
+shape = SubResource("4")
 
 [node name="Platform1" type="StaticBody3D" parent="."]
-position = Vector3(-5, 2, 0)
+position = Vector3(-8, 2.0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Platform1"]
-mesh = SubResource("4")
+mesh = SubResource("5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Platform1"]
-shape = SubResource("5")
+shape = SubResource("6")
 
 [node name="Platform2" type="StaticBody3D" parent="."]
-position = Vector3(2, 4, 0)
+position = Vector3(0, 4.0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Platform2"]
-mesh = SubResource("4")
+mesh = SubResource("5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Platform2"]
-shape = SubResource("5")
+shape = SubResource("6")
 
 [node name="Platform3" type="StaticBody3D" parent="."]
-position = Vector3(8, 3, 0)
+position = Vector3(8, 2.0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Platform3"]
-mesh = SubResource("4")
+mesh = SubResource("5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Platform3"]
-shape = SubResource("5")
+shape = SubResource("6")
+
+[node name="LeftPillar" type="StaticBody3D" parent="."]
+position = Vector3(-2, 4, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="LeftPillar"]
+mesh = SubResource("7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LeftPillar"]
+shape = SubResource("8")
+
+[node name="RightPillar" type="StaticBody3D" parent="."]
+position = Vector3(2, 4, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RightPillar"]
+mesh = SubResource("7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RightPillar"]
+shape = SubResource("8")
+
+[node name="HighPlatform" type="StaticBody3D" parent="."]
+position = Vector3(0, 8.5, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="HighPlatform"]
+mesh = SubResource("9")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HighPlatform"]
+shape = SubResource("10")
 
 [node name="Player" parent="." instance=ExtResource("1")]
-position = Vector3(0, 2, 0)
+position = Vector3(-10, 2, 0)
+
+[node name="Enemy1" parent="." instance=ExtResource("2")]
+position = Vector3(-8, 3.5, 0)
+
+[node name="Enemy2" parent="." instance=ExtResource("2")]
+position = Vector3(8, 3.5, 0)
