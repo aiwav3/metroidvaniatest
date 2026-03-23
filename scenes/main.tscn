@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/player.tscn" id="1"]
+
+[sub_resource type="BoxMesh" id="2"]
+size = Vector3(20, 0.5, 1)
+
+[sub_resource type="BoxShape3D" id="3"]
+size = Vector3(20, 0.5, 1)
+
+[sub_resource type="BoxMesh" id="4"]
+size = Vector3(4, 0.5, 1)
+
+[sub_resource type="BoxShape3D" id="5"]
+size = Vector3(4, 0.5, 1)
+
+[node name="Main" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+rotation = Vector3(-0.9599, 0.5236, 0)
+shadow_enabled = true
+
+[node name="Floor" type="StaticBody3D" parent="."]
+position = Vector3(0, -0.25, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+mesh = SubResource("2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("3")
+
+[node name="Platform1" type="StaticBody3D" parent="."]
+position = Vector3(-5, 2, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Platform1"]
+mesh = SubResource("4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform1"]
+shape = SubResource("5")
+
+[node name="Platform2" type="StaticBody3D" parent="."]
+position = Vector3(2, 4, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Platform2"]
+mesh = SubResource("4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform2"]
+shape = SubResource("5")
+
+[node name="Platform3" type="StaticBody3D" parent="."]
+position = Vector3(8, 3, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Platform3"]
+mesh = SubResource("4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform3"]
+shape = SubResource("5")
+
+[node name="Player" parent="." instance=ExtResource("1")]
+position = Vector3(0, 2, 0)
