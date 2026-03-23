@@ -5,9 +5,11 @@ const JUMP_VELOCITY = 12.0
 const GRAVITY = 25.0
 const COYOTE_TIME = 0.12
 const JUMP_BUFFER_TIME = 0.1
+const AIR_JUMPS = 1
 
 var coyote_timer: float = 0.0
 var jump_buffer_timer: float = 0.0
+var air_jumps_remaining: int = AIR_JUMPS
 
 
 func _physics_process(delta: float) -> void:
@@ -18,6 +20,7 @@ func _physics_process(delta: float) -> void:
 	# Coyote time — allows jumping shortly after walking off a ledge
 	if is_on_floor():
 		coyote_timer = COYOTE_TIME
+		air_jumps_remaining = AIR_JUMPS
 	else:
 		coyote_timer -= delta
 
@@ -27,11 +30,15 @@ func _physics_process(delta: float) -> void:
 	else:
 		jump_buffer_timer -= delta
 
-	# Execute jump
+	# Ground jump (includes coyote time)
 	if jump_buffer_timer > 0.0 and coyote_timer > 0.0:
 		velocity.y = JUMP_VELOCITY
 		coyote_timer = 0.0
 		jump_buffer_timer = 0.0
+	# Air jump
+	elif Input.is_action_just_pressed("jump") and air_jumps_remaining > 0:
+		velocity.y = JUMP_VELOCITY
+		air_jumps_remaining -= 1
 
 	# Horizontal movement
 	var direction = Input.get_axis("move_left", "move_right")
